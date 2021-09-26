@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# frozen_string_literal: true
+
+require 'csv'
+
+puts 'Seeding database...'
+table = CSV.parse(File.read(Rails.root.join('lib', 'assets', 'redfin_2021-09-24-15-12-09.csv')), headers: true)
+
+table.each do |row|
+  home = Home.find_or_create_by(address: row['ADDRESS'])
+  home.update!(
+    property_type: row['PROPERTY TYPE'],
+    city: row['CITY'],
+    state: row['STATE OR PROVINCE'],
+    zip: row['ZIP OR POSTAL CODE'],
+    beds: row['BEDS'],
+    baths: row['BATHS'],
+    year_built: row['YEAR BUILT'],
+    status: row['STATUS'],
+    url: row['URL (SEE http://www.redfin.com/buy-a-home/comparative-market-analysis FOR INFO ON PRICING)'],
+  )
+end
