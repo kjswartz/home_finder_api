@@ -1,0 +1,30 @@
+Rails:
+  Enabled: true
+
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml
+
+Layout/LineLength:
+  Max: 99
+
+Metrics/MethodLength:
+  Max: 10
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/Documentation:
+  Enabled: false
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "bin/**/*"
+    - "config/**/*"
+    - "db/**/*"
+    - "script/**/*"
+    - "vendor/**/*"
+    - "Gemfile"
+    - !ruby/regexp /old_and_unused\.rb$/
+  TargetRubyVersion: 3.0

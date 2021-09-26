@@ -7,6 +7,7 @@ ruby '3.0.2'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'graphql'
 gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'puma', '~> 5.0'
 gem 'redis', '~> 4.0'
