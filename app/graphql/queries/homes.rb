@@ -6,13 +6,7 @@ module Queries
     argument :search, String, required: false
 
     def resolve(search: nil)
-      homes = ::Home.all
-
-      if search.present?
-
-      end
-
-      homes
+      search.present? ? ::Home.where('address ~* ?', search) : ::Home.all
     end
   end
 end
