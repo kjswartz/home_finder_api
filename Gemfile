@@ -27,12 +27,15 @@ group :development do
 end
 
 group :test do
+  gem 'faker'
+  gem 'factory_bot_rails'
   gem 'graphiql-rails'
   gem 'guard'
   gem 'guard-rspec'
   gem 'pry-rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
