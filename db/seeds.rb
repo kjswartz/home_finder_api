@@ -6,7 +6,7 @@ puts 'Seeding database...'
 table = CSV.parse(File.read(Rails.root.join('lib', 'assets', 'redfin_2021-09-24-15-12-09.csv')), headers: true)
 
 table.each do |row|
-  home = Home.find_or_create_by(address: row['ADDRESS'])
+  home = Home.find_or_create_by!(address: row['ADDRESS'])
   home.update!(
     property_type: row['PROPERTY TYPE'],
     city: row['CITY'],

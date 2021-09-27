@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -17,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_09_26_213356) do
 
   create_table "homes", force: :cascade do |t|
     t.string "property_type"
-    t.string "address"
+    t.string "address", null: false
     t.string "city"
     t.string "state"
     t.string "zip"
