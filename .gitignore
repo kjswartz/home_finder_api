@@ -41,3 +41,7 @@ yarn-debug.log*
 
 # Ignore Redis dump
 dump.rdb
+
+.envrc
+.DS_Store
+*/.DS_Store
