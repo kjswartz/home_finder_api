@@ -6,7 +6,7 @@ services:
     volumes:
       - ".:/home_finder_api"
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - RAILS_ENV=development
       - POSTGRES_HOST=db
