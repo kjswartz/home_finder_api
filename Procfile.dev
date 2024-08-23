@@ -1,2 +1,0 @@
-redis: redis-server --port 6380
-web: bundle exec rails server -p 3001
